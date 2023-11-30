@@ -15,7 +15,7 @@ Agradezco a **Luis Armando** por la inspiración y colaboración en el desarroll
 - **ABRAHAM ISAAC ORTIZ LOPEZ**
 - **ROLANDO CAMPOS LORETO**
 
-**Instrucciones de Ejecución:**
+## "**Instrucciones de Ejecución:**"
 
 ## Para compilar y ejecutar el programa:
 
