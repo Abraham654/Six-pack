@@ -114,6 +114,8 @@ principal():
 ## Sugerencias
 Si tienes alguna sugerencia o mejora para este proyecto, no dudes en contactarnos a través del correo electrónico para discutirlo y colaborar.
 
-¡Gracias por revisar este proyecto!
 
+## Diagrama de flujo
 ![Diagrama de flujo](https://th.bing.com/th/id/OIG.TGMvrTf7oAtNs7P.B9Tg?pid=ImgGn) 
+
+¡Gracias por revisar este proyecto!
