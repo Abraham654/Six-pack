@@ -40,6 +40,77 @@ sudo apt install graphviz
 ## Frase
 "Mas vale prevenir que lamentar"
 
+## Seudocodigo
+funcion(x):
+    return x^2 - 4
+
+metodoBiseccion(a, b, tolerancia, iteraciones):
+    c = 0.0
+    
+    imprimir("Iteración\t a\t\t b\t\t c\t\t f(c)\t\t Error Relativo")
+    
+    para i en rango(iteraciones + 1):
+        c = (a + b) / 2
+        
+        f_c = funcion(c)
+        
+        errorRelativo = abs((c - a) / c)
+        
+        imprimir(i, "\t\t ", a, "\t\t ", b, "\t\t ", c, "\t\t ", f_c, end="")
+        
+        si i > 0:
+            imprimir("\t\t ", errorRelativo)
+        
+        imprimir("\n")
+        
+        si f_c == 0 o abs(b - a) < tolerancia:
+            romper
+        sino si funcion(a) * f_c < 0:
+            b = c
+        sino:
+            a = c
+    
+    devolver c
+
+principal():
+    a = 0.0
+    b = 0.0
+    tolerancia = 0.0
+    iteraciones = 0
+    
+    # Obtener el valor de a y b dentro del intervalo [-3, 3]
+    para x en rango(-3, 4, 0.1):
+        y = funcion(x)
+        si y < 0:
+            a = x
+        sino si y > 0:
+            b = x
+            romper
+    
+    # Ingresa el número de iteraciones (mínimo 0, máximo 10)
+    imprimir("Ingrese el número de iteraciones (0-10): ")
+    leer(iteraciones)
+    
+    # Ingresa el número de decimales que deseas usar
+    imprimir("Ingrese el número de decimales: ")
+    leer(decimales)
+    
+    # Configura la precisión de salida
+    imprimir("Tabla de valores obtenidos:")
+    imprimir("x\t\t y\t\t a\t\t b")
+    para x en rango(3, -4, -0.1):
+        y = funcion(x)
+        imprimir(x, "\t\t ", y, "\t\t ", a, "\t\t ", b)
+    
+    angulo_en_grados = 45.0
+    
+    # Convertir de grados a radianes
+    angulo_en_radianes = angulo_en_grados * pi / 180.0
+    
+    raiz = metodoBiseccion(a, b, tolerancia, iteraciones)
+    
+    imprimir("La raíz aproximada es: ", raiz)
+
 ## Sugerencias
 Si tienes alguna sugerencia o mejora para este proyecto, no dudes en contactarnos a través del correo electrónico para discutirlo y colaborar.
 
