@@ -6,6 +6,8 @@
 
 Este es un programa que implementa el método de bisección en C++.  El método de bisección es un método numérico que se basa en el teorema del valor intermedio, que dice que si una función continua cambia de signo en un intervalo, entonces tiene al menos una raíz en ese intervalo. El método consiste en ir dividiendo el intervalo en dos partes iguales y elegir el subintervalo donde la función cambia de signo, hasta obtener una aproximación de la raíz con el grado de precisión deseado. El método de bisección tiene la ventaja de ser simple y garantizar la convergencia, pero tiene la desventaja de ser lento y requerir que la función sea continua y cambie de signo en el intervalo inicial.
 
+De acuerdo a su nombre I=2, sección= partes, lo que indica que el intervalo inicial se divide en 2 partes iguales y se retienen la mitad donde f cambia de signo, a este subintérvalo se repite el proceso hasta llegar al criterio de paro
+
 ## Agradecimientos
 
 Agradezco a **Luis Armando** por la inspiración y colaboración en el desarrollo de este proyecto. Sin duda el desarrollo de este proyecto me impulso mas a agarrarle el gusto a la programación y al aprender nuevos métodos, sin duda alguna eh aprendido mucho sobre el profesor y en este agradecimiento, agradezco el empeño y essfuerzo que transmite en cada clase. 
