@@ -79,10 +79,10 @@ double metodoBiseccion(double a, double b, double tolerancia, int iteraciones) {
         
         double errorRelativo = std::abs((c - a) / c);
         
-        std::cout << std::setw(9) << i << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(9) << a << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(9) << b << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(9) << c << termcolor::reset() << "\t\t " << f_c;
+        std::cout << std::setw(4) << i << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(2) << a << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(4) << b << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(4) << c << termcolor::reset() << "\t\t " << f_c;
         
         if (i > 0) {
-            std::cout << "\t\t " << termcolor::colored(termcolor::color::yellow) << std::setw(15) << errorRelativo << termcolor::reset();
+            std::cout << "\t\t " << termcolor::colored(termcolor::color::yellow) << std::setw(10) << errorRelativo << termcolor::reset();
         }
         
         std::cout << std::endl;
