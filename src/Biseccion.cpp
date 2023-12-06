@@ -1,3 +1,22 @@
+#ifndef RAIZAPROX_HPP
+#define RAIZAPROX_HPP
+
+#include <iostream>
+#include <cmath>
+
+class Raizaprox {
+public:
+    Raizaprox(double valor) : valor(valor) {}
+
+    friend std::ostream& operator<<(std::ostream& os, const Raizaprox& obj) {
+        return os << "RAÍZ APROXIMADA: " << std::uppercase << obj.valor;
+    }
+
+private:
+    double valor;
+};
+
+#endif // RAIZAPROX_HPP
 
 #ifndef TERMCOLOR_HPP
 #define TERMCOLOR_HPP
@@ -98,6 +117,8 @@ int main() {
     // Ingresa el número de iteraciones (mínimo 0, máximo 10)
     std::cout << "Ingrese el número de iteraciones (0-10): ";
     std::cin >> iteraciones;
+
+
     
     // Ingresa el número de decimales que deseas usar
     int decimales;
