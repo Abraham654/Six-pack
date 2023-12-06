@@ -1,4 +1,3 @@
-
 #ifndef RADIANES_HPP
 #define RADIANES_HPP
 
