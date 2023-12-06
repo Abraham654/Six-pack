@@ -1,3 +1,25 @@
+
+#ifndef RADIANES_HPP
+#define RADIANES_HPP
+
+#include <cmath>
+
+class Radianes {
+public:
+    Radianes(double grados) : grados(grados) {}
+
+    double obtenerValor() const {
+        return grados * M_PI / 180.0;
+    }
+
+private:
+    double grados;
+};
+
+
+
+#endif // RADIANES_HPP
+
 #ifndef RAIZAPROX_HPP
 #define RAIZAPROX_HPP
 
@@ -79,7 +101,7 @@ double metodoBiseccion(double a, double b, double tolerancia, int iteraciones) {
         
         double errorRelativo = std::abs((c - a) / c);
         
-        std::cout << std::setw(4) << i << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(2) << a << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(4) << b << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(4) << c << termcolor::reset() << "\t\t " << f_c;
+        std::cout << std::setw(4) << i << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(-2) << a << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(-2) << b << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(4) << c << termcolor::reset() << "\t\t " << f_c;
         
         if (i > 0) {
             std::cout << "\t\t " << termcolor::colored(termcolor::color::yellow) << std::setw(10) << errorRelativo << termcolor::reset();
@@ -115,7 +137,7 @@ int main() {
     }
     
     // Ingresa el número de iteraciones (mínimo 0, máximo 10)
-    std::cout << "Ingrese el número de iteraciones (0-10): ";
+    std::cout << "Ingrese el número de iteraciones (0-1000): ";
     std::cin >> iteraciones;
 
 
@@ -149,11 +171,6 @@ int main() {
         }
         std::cout << std::endl;
     }
-    
-    double angulo_en_grados = 45.0;
-    
-    // Convertir de grados a radianes
-    double angulo_en_radianes = angulo_en_grados * M_PI / 180.0; // M_PI es una constante que representa pi
     
     return 0;
 }
