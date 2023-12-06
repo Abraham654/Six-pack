@@ -4,7 +4,7 @@
 #include <iomanip>
 
 double funcion(double x) {
-    return std::pow(x, 2) - 4; // Ejemplo de función cuadrática: x^2 - 4
+    return std::pow(x,2)-cos(x); // Ejemplo de función cuadrática: x^2 - 4
 }
 
 double metodoBiseccion(double a, double b, double tolerancia, int iteraciones) {
