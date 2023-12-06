@@ -1,9 +1,51 @@
+
+#ifndef TERMCOLOR_HPP
+#define TERMCOLOR_HPP
+
+#include <ostream>
+
+namespace termcolor {
+
+enum class color {
+    black,
+    red,
+    green,
+    yellow,
+    blue,
+    magenta,
+    cyan,
+    white
+};
+
+class colored {
+public:
+    colored(color foreground) : foreground(foreground) {}
+
+    friend std::ostream& operator<<(std::ostream& os, const colored& obj) {
+        return os << "\033[" << static_cast<int>(obj.foreground) + 30 << "m";
+    }
+
+private:
+    color foreground;
+};
+
+class reset {
+public:
+    friend std::ostream& operator<<(std::ostream& os, const reset& obj) {
+        return os << "\033[0m";
+    }
+};
+
+} // namespace termcolor
+
+#endif // TERMCOLOR_HPP
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
 
 double funcion(double x) {
-    return std::pow(x,2)-cos(x); // Ejemplo de función cuadrática: x^2 - 4
+    return std::pow(x,2) - 4; // Ejemplo de función cuadrática: x^2 - 4
 }
 
 double metodoBiseccion(double a, double b, double tolerancia, int iteraciones) {
@@ -18,10 +60,10 @@ double metodoBiseccion(double a, double b, double tolerancia, int iteraciones) {
         
         double errorRelativo = std::abs((c - a) / c);
         
-        std::cout << i << "\t\t " << a << "\t\t " << b << "\t\t " << c << "\t\t " << f_c;
+        std::cout << std::setw(9) << i << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(9) << a << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(9) << b << termcolor::reset() << "\t\t " << termcolor::colored(termcolor::color::blue) << std::setw(9) << c << termcolor::reset() << "\t\t " << f_c;
         
         if (i > 0) {
-            std::cout << "\t\t " << errorRelativo;
+            std::cout << "\t\t " << termcolor::colored(termcolor::color::yellow) << std::setw(15) << errorRelativo << termcolor::reset();
         }
         
         std::cout << std::endl;
